@@ -41,17 +41,17 @@ function bgNav(){
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link my-link" to="about">
+                <NavLink className="nav-link my-link" to="/about">
                   about
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link my-link" to="menu">
+                <NavLink className="nav-link my-link" to="/menu">
                   menu
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link my-link" to="contact">
+                <NavLink className="nav-link my-link" to="/contact">
                   contact us
                 </NavLink>
               </li>

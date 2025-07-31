@@ -4,7 +4,7 @@ import "./menu.css";
 import axios from "axios";
 import Recipe from "./../recipe/Recipe";
 import Modall from "./../modal/Modall";
-import { Audio } from "react-loader-spinner";
+import DotLoader  from 'react-spinners/DotLoader';
 const Menu = () => {
   // * search state================
   const [search, setSearch] = useState("");
@@ -46,7 +46,7 @@ const Menu = () => {
   }
   // call api function==========================
   useEffect(() => {
-    document.title = "menu"
+    document.title = "menu";
     getApi("pizza");
   }, []);
   // get spacific recipe=======================================
@@ -98,19 +98,13 @@ const Menu = () => {
           )}
           {loadding == false ? (
             <section className="vh-100 d-flex justify-content-center align-items-center">
-              <Audio
-                height="100"
-                width="100"
-                color="#4fa94d"
-                ariaLabel="audio-loading"
-                wrapperStyle={{}}
-                wrapperClass="wrapper-class"
-                visible={true}
-              />
+              <DotLoader color="#1fed16" loading  />
             </section>
           ) : (
             <section>
-              <h2 className="fs-4 mb-3 text-capitalize text-success">popular recipe :</h2>
+              <h2 className="fs-4 mb-3 text-capitalize text-success">
+                popular recipe :
+              </h2>
               <section className="most-popular d-flex flex-wrap align-items-center gap-4 row-gap-2 ">
                 <p
                   type="button"
@@ -164,7 +158,7 @@ const Menu = () => {
                     leftValue();
                   }}
                 >
-                  redPepper
+                  red Pepper
                 </p>
               </section>
               <section className="row py-5 g-3 row-cols-1 row-cols-md-3 row-cols-lg-4">
