@@ -1,0 +1,40 @@
+.navbar {
+  .my-link {
+    width: fit-content;
+    padding: 0;
+    margin: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+
+    position: relative;
+    color: var(--text-color);
+  }
+  .my-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: all var(--transition-time);
+  }
+  .active::after {
+    width: 100%;
+  }
+  .navbar-nav .nav-link.active{color: var(--text-color);}
+  .my-link:hover::after {
+    width: 100%;
+  }
+  .bars {
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+}
+.bg-nav{
+  transition: all var(--transition-time) ;
+  background-color: var(--main-color);
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0;
+}

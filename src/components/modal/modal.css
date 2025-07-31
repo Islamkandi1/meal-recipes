@@ -1,0 +1,19 @@
+.modal {
+  figure {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    img{
+        object-fit: cover;
+        height: 100%;
+    }
+  }
+  ul{
+    list-style: disc;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+  }
+}

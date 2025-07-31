@@ -1,0 +1,38 @@
+.header {
+  background: url("./../../assets/images/header.jpg") center/cover;
+  background-attachment: fixed;
+  .container {
+    min-height: 100dvh;
+    color: var(--text-color);
+    text-align: center;
+  }
+  h1 {
+    max-width: 600px;
+    line-height: 45px;
+    margin: 0 auto;
+  }
+}
+
+/* subscribe */
+.subscribe {
+  background: url("./../../assets/images/call-to-action-v2.jpg") center/cover;
+  color: var(--text-color);
+
+  p {
+    max-width: 600px;
+    color: #a1a1a1;
+  }
+  button {
+    padding: 0.7rem 1.6rem;
+    text-transform: capitalize;
+    outline: none;
+    border: 0;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    transition: all var(--transition-time);
+    &:hover {
+      background-color: var(--text-color);
+      color: var(--main-color);
+    }
+  }
+}

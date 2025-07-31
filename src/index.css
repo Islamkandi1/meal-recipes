@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("./assets/fonts/Lora-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("./assets/fonts/Lora-SemiBold.ttf");
+  font-weight: 600;
+}
+body {
+  font-family: "Lora";
+  font-weight: 400;
+}
+:root {
+  --main-color: #6ebe3b;
+  --text-color: #fff;
+  --second-color: #1c1000;
+  --transition-time: 0.4s;
+  --swiper-theme-color: #6ebe3b;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.mySwiper {
+  cursor: grab;
+  width: 100%;
+  height: 300px;
+}
+.mySwiper:active {
+  cursor: grabbing;
+}
+.mySwiper .swiper-pagination-bullet-active {
+  background-color: var(--main-color);
+}
+.mySwiper .swiper-pagination-bullet{
+  --swiper-pagination-bullet-inactive-color:#fff
+}
+.head span {
+  color: var(--main-color);
+}
+
+.notfound{
+  width: 500px;
+}

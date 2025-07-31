@@ -1,0 +1,8 @@
+.about{
+    figure{
+        border-radius: 50% 0;
+    }
+    .my-p{
+        line-height: 30px;
+    }
+}
