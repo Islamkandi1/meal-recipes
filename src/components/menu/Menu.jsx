@@ -4,7 +4,7 @@ import "./menu.css";
 import axios from "axios";
 import Recipe from "./../recipe/Recipe";
 import Modall from "./../modal/Modall";
-import DotLoader  from 'react-spinners/DotLoader';
+import DotLoader from "react-spinners/DotLoader";
 const Menu = () => {
   // * search state================
   const [search, setSearch] = useState("");
@@ -66,7 +66,14 @@ const Menu = () => {
       <Headers text={"menu"} />
       <section className="menu pt-4">
         <section className="container">
-          <form className="mb-4" action="" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="mb-4"
+            action=""
+            onSubmit={(e) => {
+              e.preventDefault();
+              getApi(search);
+            }}
+          >
             <section className="input-box d-flex align-items-center flex-row ">
               <i className="fa-solid fa-magnifying-glass"></i>
               <input
@@ -77,13 +84,7 @@ const Menu = () => {
                 value={search}
                 onChange={handleSearchValue}
               />
-              <button
-                type="submit"
-                className="search-btn flex-shrink-1"
-                onClick={() => {
-                  getApi(search);
-                }}
-              >
+              <button type="submit" className="search-btn flex-shrink-1">
                 search
               </button>
             </section>
@@ -98,7 +99,7 @@ const Menu = () => {
           )}
           {loadding == false ? (
             <section className="vh-100 d-flex justify-content-center align-items-center">
-              <DotLoader color="#1fed16" loading  />
+              <DotLoader color="#1fed16" loading />
             </section>
           ) : (
             <section>
