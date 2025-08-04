@@ -27,27 +27,31 @@ const Menu = () => {
   const [spacificRecipe, setSpacificRecipe] = useState("");
 
   // getApi==========================================================
-  async function getApi(search) {
+  async function getApi(search,signal) {
     try {
       setLoadding(false);
       clearSearch();
       const { data } = await axios.get(
-        `https://forkify-api.herokuapp.com/api/search?q=${search}`
+        `https://forkify-api.herokuapp.com/api/search?q=${search}`,{signal}
       );
       setRecipes(data.recipes);
-      setLoadding(true);
       serError(" ");
+      setLoadding(true)
     } catch (error) {
-      error.message = "somthing went wrong";
-      setRecipes(null);
-      serError(error.message);
-      setLoadding(true);
+      if(error.name === "CanceledError" || error.code === "ERR_CANCELED"){
+        setLoadding(false);
+      }else{
+        setRecipes(null);
+        serError("somthing went wrong");
+      }
     }
   }
   // call api function==========================
   useEffect(() => {
+    const controller = new AbortController();
+    getApi("pizza",controller.signal);
     document.title = "menu";
-    getApi("pizza");
+    return () => controller.abort();
   }, []);
   // get spacific recipe=======================================
   async function getSpacificRecipe(id) {
